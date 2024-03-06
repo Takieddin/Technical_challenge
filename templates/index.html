@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Depth Frame Generator</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <nav id="navbar">
+            <h1>Image Analyzer</h1>
+        </nav>
+        <aside id="sidebar">
+            <div id="controls">
+               
+                <div class="control-group">
+                    <label for="depthMinInput">Depth Min (Value):</label>
+                    <input type="number" id="depthMinInput" name="depthMinInput" min="0" value="9001">
+                </div>
+                <div class="control-group">
+                    <label for="depthMaxInput">Depth Max (Value):</label>
+                    <input type="number" id="depthMaxInput"depthMaxInput name="depthMaxInput" min="0" value="9050">
+                </div>
+                <div class="control-group checkbox">
+                    <label><input type="checkbox" id="applyColorMap"> Apply Color Map</label>
+                </div>
+                <button id="generateFrame">Generate Frame</button>
+            </div>
+            
+            <h2>List of Images</h2>
+            <ul id="imageList"></ul>
+            <button id="addNew">+ Add New</button>
+            <input type="file" id="fileInput" hidden>
+        </aside>
+        <main id="content">
+            <div id="panzoom-element" style="max-width: 100%; overflow: hidden; display: flex; justify-content: center; align-items: center; height: calc(100vh - 60px - 20px);">
+                <img id="main-image" src="" alt="Main content image" style="display: block; max-width: 100%; max-height: 100%;">
+            </div>
+        </main>
+    </div>
+    <script src="https://unpkg.com/@panzoom/panzoom"></script>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
